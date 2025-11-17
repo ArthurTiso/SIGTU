@@ -104,11 +104,11 @@ model Contato {
   aluno       Aluno   @relation(fields: [alunoId], references: [idAluno])
 }
 
-// 7. Adminstrador
+// 7. Admin
 model Admin {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
+  id        Int     @id @default(autoincrement())
+  username  String  @unique
   password  String
   createdAt DateTime @default(now())
 }
-    
+
