@@ -1,0 +1,29 @@
+{
+  "name": "sigtu",
+  "version": "1.0.0",
+  "description": "projeto para prefeitura",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurTiso/SIGTU.git"
+  },
+  "keywords": [
+    "Hackaton",
+    "Prefeitura",
+    "Backend",
+    "JavaScript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurTiso/SIGTU/issues"
+  },
+  "homepage": "https://github.com/ArthurTiso/SIGTU#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^4.1.12"
+  }
+}
