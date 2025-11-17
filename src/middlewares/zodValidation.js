@@ -1,16 +1,14 @@
-export function validate(schema) {
+export const zodValidation = (schema) => {
     return (req, res, next) => {
       const result = schema.safeParse(req.body);
-  
       if (!result.success) {
         return res.status(400).json({
           error: "Erro de validação",
           detalhes: result.error.flatten(),
         });
       }
-  
       req.body = result.data;
       next();
     };
-  }
+  };
   

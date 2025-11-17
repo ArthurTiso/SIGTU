@@ -2,6 +2,7 @@
   "name": "sigtu",
   "version": "1.0.0",
   "description": "projeto para prefeitura",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "node src/server.js",
@@ -33,3 +34,4 @@
     "prisma": "^6.19.0"
   }
 }
+

@@ -33,9 +33,9 @@ export const alunoController = {
     try {
       await alunoService.deletarAluno(req.params.id);
       res.status(204).send();
+      console.log("ID recebido:", req.params.id);
     } catch (error) {
       next(error);
     }
   },
 };
-    

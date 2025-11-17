@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Step Form</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="dark:bg-[#333333] bg-[#F3F3F3] text-white overflow-x-hidden">
+  <div class="px-4 max-w-3xl mx-auto">
+    <form id="stepForm">
+      <!-- Step 1 -->       
+      <fieldset class="step">
+        <legend class="text-2xl mb-6 pt-6">Dados pessoais</legend>
+              <div class="flex flex-col mb-4 gap-2">
+                <label for="nome">Nome completo</label>
+                <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="nome" />
+              </div>
+              <div class="flex gap-2 w-full">
+                <div class="flex flex-col mb-4 flex-1">
+                    <label for="rg">RG</label>
+                    <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="rg" />
+                </div>
+                <div class="flex flex-col mb-4 flex-1">
+                    <label for="cpf">CPF</label>
+                    <input required class="py-2 px-4 border rounded-md dark:border-zinc-300 w-full" type="number" id="cpf" />
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <div class="flex flex-col mb-4 flex-1">
+                    <label for="data-nascimento">Data de nascimento</label>
+                    <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="date" id="data-nascimento" />
+                </div>
+                <div class="flex flex-col mb-4 flex-1">
+                    <label for="numero-celular">Número de celular</label>
+                    <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="numero-celular" />
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <div class="flex flex-col mb-4 flex-1">
+                    <label for="nome-mae">Nome da mãe</label>
+                    <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="nome-mae" />
+                </div>
+                <div class="flex flex-col mb-4 flex-1">
+                    <label for="nome-pai">Nome do pai</label>
+                    <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="nome-pai" />
+                </div>
+              </div>
+              <div class="flex justify-end"> 
+                <button type="button" class="cursor-pointer next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+              </div>
+      </fieldset>
+
+      <!-- Step 2 -->
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Endereço</legend>
+                <div class="flex gap-2">
+                    <div class="flex flex-col mb-4 gap-2 flex-1">
+                        <label for="cep">CEP</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="cep" />
+                    </div>
+                    <div class="flex flex-col mb-4 gap-2 flex-1">
+                        <label for="uf">UF</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="uf" />
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex flex-col mb-4 gap-2 flex-1">
+                        <label for="cidade">Cidade</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="cidade" />
+                    </div>
+                    <div class="flex flex-col mb-4 gap-2 flex-1">
+                        <label for="bairro">Bairro</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="bairro" />
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex flex-col mb-4 gap-2 flex-1">
+                        <label for="nome">Rua/Av.</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="rua" />
+                    </div>
+                    <div class="flex flex-col gap-2 flex-1">
+                        <label for="nome">Número</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="numero-casa" />
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <button type="button" class="cursor-pointer prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+                    <button type="button" class="cursor-pointer next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+                  </div>
+      </fieldset>
+
+      <!-- Step 3 -->
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Composição familiar</legend>
+                <div class="flex gap-2">
+                    <div class="flex flex-col gap-2 mb-4 flex-1">
+                        <label for="">Com quem você mora?</label>
+                        <select class="border dark:border-zinc-300 p-2 rounded-md" name="" id="">
+                            <option value="">Selecione</option>
+                            <option value="">Com os pais</option>
+                            <option value="">Só com a mãe</option>
+                            <option value="">Só com o pai</option>
+                            <option value="">Cônjuge</option>
+                            <option value="">Sozinho</option>
+                            <option value="">Outros</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-1">
+                        <label for="">Tipo de residência</label>
+                        <select class="border dark:border-zinc-300 p-2 rounded-md" name="" id="">
+                            <option value="">Selecione</option>
+                            <option value="">Própria</option>
+                            <option value="">Alugada</option>
+                            <option value="">Outros</option>
+                        </select>
+                    </div>
+                </div>
+        <div class="flex justify-between">
+          <button type="button" class="cursor-pointer prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+          <button type="button" class="cursor-pointer next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Composição familiar</legend>
+        <legend class="text-2xl mb-6 pt-6">Dados acadêmicos</legend>
+        <div class="flex flex-col mb-4 gap-2">
+            <label for="universidade">Universidade</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="universidade" />
+        </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col mb-4 gap-2 flex-1">
+                <label for="curso">Curso</label>
+                <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="curso" />
+            </div>
+            <div class="flex flex-col mb-4 gap-2 flex-1">
+                <label for="semestre">Semestre atual</label>
+                <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="semestre" />
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col mb-4 gap-2 flex-1">
+                <label for="tempo-curso">Tempo total de curso</label>
+                <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="tempo-curso" />
+            </div>
+            <div class="flex flex-col mb-4 gap-2 flex-1">
+                <label for="conclusao">Data de conclusão prevista</label>
+                <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" placeholder="Ex. 01/12/2026" type="date" id="conclusao" />
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col mb-4 gap-2 flex-1">
+                <label for="frequencia">Frequência semanal</label>
+                <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" placeholder="Ex. Segunda à sexta" id="frequencia"/>
+            </div>
+            <div class="flex flex-col mb-4 gap-2 flex-1">
+                <label for="">Período do curso</label>
+                <select class="border dark:border-zinc-300 p-2 rounded-md" name="" id="">
+                    <option value="">Selecione</option>
+                    <option value="">Manhã</option>
+                    <option value="">Noite</option>
+                    <option value="">Integral</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" class="cursor-pointer prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+          <button type="button" class="cursor-pointer next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- Último Step -->
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Bolsa de estudos</legend>
+                <div class="flex flex-col gap-2 mb-4 flex-1">
+                    <label for="bolsa">Possui bolsa?</label>
+                    <input required class="w-[1.5rem] h-[1.5rem] p-4" type="checkbox" id="bolsa">
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex flex-col gap-2 flex-1">
+                        <label for="">Tipo de bolsa</label>
+                        <select class="border dark:border-zinc-300 p-2 rounded-md" name="" id="">
+                            <option value="">Selecione</option>
+                            <option value="">ProUni</option>
+                            <option value="">FIES</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-4 flex-1">
+                        <label for="porcentagem-bolsa">% da bolsa</label>
+                        <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="porcentagem-bolsa">
+                    </div>
+                </div>
+        <div class="flex justify-between">
+          <button type="button" class="cursor-pointer prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+          <button type="submit" class="cursor-pointer bg-green-600 text-white px-4 py-2 rounded-md">Finalizar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll(".step");
+    let currentStep = 0;
+
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.classList.toggle("hidden", i !== index);
+      });
+    }
+
+    document.querySelectorAll(".next").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    document.querySelectorAll(".prev").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    showStep(currentStep);
+  </script>
+</body>
+</html>
