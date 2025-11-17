@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Step Form - Integração Backend</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="dark:bg-[#333333] bg-[#F3F3F3] text-white overflow-x-hidden">
+  <div class="px-4 max-w-3xl mx-auto py-6">
+    <form id="stepForm">
+      <!-- Step 1: Dados pessoais -->
+      <fieldset class="step">
+        <legend class="text-2xl mb-6 pt-6">Dados pessoais</legend>
+        <div class="flex flex-col mb-4 gap-2">
+          <label for="nome">Nome completo</label>
+          <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="nome" />
+        </div>
+        <div class="flex gap-2 w-full">
+          <div class="flex flex-col mb-4 flex-1">
+            <label for="rg">RG</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="rg" />
+          </div>
+          <div class="flex flex-col mb-4 flex-1">
+            <label for="cpf">CPF</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="cpf" />
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 flex-1">
+            <label for="data-nascimento">Data de nascimento</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="date" id="data-nascimento" />
+          </div>
+          <div class="flex flex-col mb-4 flex-1">
+            <label for="numero-celular">Número de celular</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="numero-celular" />
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 flex-1">
+            <label for="nome-mae">Nome da mãe</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="nome-mae" />
+          </div>
+          <div class="flex flex-col mb-4 flex-1">
+            <label for="nome-pai">Nome do pai</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="nome-pai" />
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button type="button" class="next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 2: Endereço -->
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Endereço</legend>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="cep">CEP</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="cep" />
+          </div>
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="uf">UF</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="uf" />
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="cidade">Cidade</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="cidade" />
+          </div>
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="bairro">Bairro</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="bairro" />
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="rua">Rua/Av.</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="rua" />
+          </div>
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="numero-casa">Número</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="number" id="numero-casa" />
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" class="prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+          <button type="button" class="next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 3: Dados acadêmicos -->
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Dados acadêmicos</legend>
+        <div class="flex flex-col mb-4 gap-2">
+          <label for="universidade">Universidade</label>
+          <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="universidade" />
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="curso">Curso</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="curso" />
+          </div>
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="semestre">Semestre atual</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="semestre" />
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="tempo-curso">Tempo total de curso</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="tempo-curso" />
+          </div>
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="conclusao">Data de conclusão prevista</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="date" id="conclusao" />
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col mb-4 gap-2 flex-1">
+            <label for="frequencia">Frequência semanal</label>
+            <input required class="py-2 px-4 border rounded-md dark:border-zinc-300" type="text" id="frequencia" placeholder="Ex. Segunda à sexta" />
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" class="prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+          <button type="button" class="next bg-blue-600 text-white px-4 py-2 rounded-md">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 4: Bolsa de estudos -->
+      <fieldset class="step hidden">
+        <legend class="text-2xl mb-6 pt-6">Bolsa de estudos</legend>
+        <div class="flex flex-col gap-2 mb-4 flex-1">
+          <label for="bolsa">Possui bolsa?</label>
+          <input required class="w-[1.5rem] h-[1.5rem]" type="checkbox" id="bolsa">
+        </div>
+        <div class="flex gap-2">
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="tipo-bolsa">Tipo de bolsa</label>
+            <select class="border p-2 rounded-md" id="tipo-bolsa">
+              <option value="">Selecione</option>
+              <option value="ProUni">ProUni</option>
+              <option value="FIES">FIES</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-2 mb-4 flex-1">
+            <label for="porcentagem-bolsa">% da bolsa</label>
+            <input required class="py-2 px-4 border rounded-md" type="number" id="porcentagem-bolsa">
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" class="prev bg-gray-500 text-white px-4 py-2 rounded-md">Voltar</button>
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md">Finalizar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <script>
+    // Controle de steps
+    const steps = document.querySelectorAll(".step");
+    let currentStep = 0;
+    function showStep(index) {
+      steps.forEach((step, i) => step.classList.toggle("hidden", i !== index));
+    }
+    document.querySelectorAll(".next").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+    document.querySelectorAll(".prev").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+    showStep(currentStep);
+
+    // Integração backend
+    document.getElementById("stepForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = {
+        nome: document.getElementById("nome").value,
+        rg: document.getElementById("rg").value,
+        cpf: document.getElementById("cpf").value,
+        nascimento: document.getElementById("data-nascimento").value,
+        celular: document.getElementById("numero-celular").value,
+        nomeMae: document.getElementById("nome-mae").value,
+        nomePai: document.getElementById("nome-pai").value,
+        cep: document.getElementById("cep").value,
+        uf: document.getElementById("uf").value,
+        cidade: document.getElementById("cidade").value,
+        bairro: document.getElementById("bairro").value,
+        rua: document.getElementById("rua").value,
+        numeroCasa: document.getElementById("numero-casa").value,
+        universidade: document.getElementById("universidade").value,
+        curso: document.getElementById("curso").value,
+        semestre: document.getElementById("semestre").value,
+        tempoCurso: document.getElementById("tempo-curso").value,
+        conclusao: document.getElementById("conclusao").value,
+        frequencia: document.getElementById("frequencia").value,
+        bolsa: document.getElementById("bolsa").checked,
+        tipoBolsa: document.getElementById("tipo-bolsa").value,
+        porcentagemBolsa: document.getElementById("porcentagem-bolsa").value
+      };
+
+      try {
+        const resp = await fetch("/api/cadastro", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const json = await resp.json();
+        if (resp.ok) {
+          alert("Cadastro realizado com sucesso!");
+          document.getElementById("stepForm").reset();
+          currentStep = 0;
+          showStep(currentStep);
+        } else {
+          alert("Erro: " + json.message);
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Erro ao conectar com o servidor.");
+      }
+    });
+  </script>
+</body>
+</html>
