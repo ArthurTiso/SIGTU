@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <div class="flex h-screen">
+
+    <aside class="w-64 bg-gray-800 text-white flex flex-col">
+      <div class="p-6 text-2xl font-bold border-b border-gray-700">
+        Painel Gestor
+      </div>
+      <nav class="flex-1 p-4 space-y-2">
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">🏠 Dashboard</a>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">👥 Usuários</a>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">📊 Relatórios</a>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700">⚙️ Configurações</a>
+      </nav>
+      <div class="p-4 border-t border-gray-700">
+        <button class="w-full cursor-pointer bg-red-600 py-2 rounded hover:bg-red-700">Sair</button>
+      </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col">
+
+      <header class="bg-white shadow p-4 flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Dashboard</h1>
+        <div class="flex items-center gap-4">
+          <span>Gestor Admin</span>
+          <img src="https://via.placeholder.com/40" alt="avatar" class="rounded-full">
+        </div>
+      </header>
+
+      <section class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow">
+          <h2 class="text-sm text-gray-500">Estudantes cadastrados</h2>
+          <p class="text-2xl font-bold">673</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h2 class="text-sm text-gray-500">Rotas</h2>
+          <p class="text-2xl font-bold">5</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h2 class="text-sm text-gray-500">Ônibus em circulação</h2>
+          <p class="text-2xl font-bold">14</p>
+        </div>
+      </section>
+
+      <section class="p-6">
+        <div class="bg-white rounded shadow overflow-x-auto">
+          <table class="min-w-full text-left">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="py-2 px-4">ID</th>
+                <th class="py-2 px-4">Nome</th>
+                <th class="py-2 px-4">Status</th>
+                <th class="py-2 px-4">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="py-2 px-4">1</td>
+                <td class="py-2 px-4">Maria Silva</td>
+                <td class="py-2 px-4"><span class="bg-green-200 text-green-800 px-2 py-1 rounded">Ativo</span></td>
+                <td class="py-2 px-4"><button class="text-blue-600">Editar</button></td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2 px-4">2</td>
+                <td class="py-2 px-4">João Souza</td>
+                <td class="py-2 px-4"><span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded">Pendente</span></td>
+                <td class="py-2 px-4"><button class="text-blue-600">Editar</button></td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4">3</td>
+                <td class="py-2 px-4">Ana Costa</td>
+                <td class="py-2 px-4"><span class="bg-red-200 text-red-800 px-2 py-1 rounded">Inativo</span></td>
+                <td class="py-2 px-4"><button class="text-blue-600">Editar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
