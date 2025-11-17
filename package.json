@@ -23,7 +23,11 @@
   },
   "homepage": "https://github.com/ArthurTiso/SIGTU#readme",
   "dependencies": {
+    "@prisma/client": "^6.19.0",
     "express": "^5.1.0",
     "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "prisma": "^6.19.0"
   }
 }

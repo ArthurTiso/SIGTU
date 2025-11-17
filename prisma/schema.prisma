@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // ajuste se for PostgreSQL ou SQLite
+  url      = env("DATABASE_URL")
+}
+
+
+// 1. TABELA — ALUNO
+
+model Aluno {
+  idAluno        Int      @id @default(autoincrement())
+  nomeAluno      String
+  rg             String   @unique
+  cpf            String   @unique
+  dataNascimento DateTime
+  nomeMae        String
+  nomePai        String
+
+  // Relacionamentos 1:1
+  endereco          Endereco?
+  situacaoFamiliar  SituacaoFamiliar?
+  dadosAcademicos   DadosAcademicos?
+  informacoesBolsa  InformacoesBolsa?
+  contato           Contato?
+}
+
+
+// 2. ENDEREÇO 
+
+model Endereco {
+  idEndereco Int    @id @default(autoincrement())
+  rua        String
+  bairro     String
+  cidade     String
+  uf         String
+  cep        String
+
+  alunoId    Int     @unique
+  aluno      Aluno   @relation(fields: [alunoId], references: [idAluno])
+}
+
+
+// 3. SITUAÇÃO FAMILIAR 
+
+model SituacaoFamiliar {
+  idSituacao    Int    @id @default(autoincrement())
+  compFamiliar  String
+  tipoRes       String
+
+  alunoId       Int     @unique
+  aluno         Aluno   @relation(fields: [alunoId], references: [idAluno])
+}
+
+
+// 4. DADOS ACADÊMICOS 
+
+model DadosAcademicos {
+  idDados            Int    @id @default(autoincrement())
+  universidade       String
+  curso              String
+  semestreAtual      Int
+  tempoTotalCurso    Int
+  anoConclusao       Int
+  frequenciaSemanal  Int
+  periodo            String
+  horarioDetalhado   String
+
+  alunoId            Int     @unique
+  aluno              Aluno   @relation(fields: [alunoId], references: [idAluno])
+}
+
+
+// 5. INFORMAÇÕES DE BOLSA 
+
+model InformacoesBolsa {
+  idBolsa      Int     @id @default(autoincrement())
+  possuiBolsa  Boolean
+  tipo         String?
+  porcentagem  Int?
+
+  alunoId      Int     @unique
+  aluno        Aluno   @relation(fields: [alunoId], references: [idAluno])
+}
+
+
+// 6. CONTATO 
+
+model Contato {
+  idContato   Int     @id @default(autoincrement())
+  email       String
+  telRes      String?
+  telEstud    String?
+
+  alunoId     Int     @unique
+  aluno       Aluno   @relation(fields: [alunoId], references: [idAluno])
+}
+
+// 7. Adminstrador
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+    
